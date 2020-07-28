@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import org.opencv.core.*;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
+import org.opencv.objdetect.Objdetect;
 import org.opencv.videoio.VideoCapture;
 import sample.Utils;
 
@@ -67,7 +68,7 @@ public class FaceDetectionController {
             this.lbpClassifier.setDisable(true);
 
             // start the video capture
-            this.capture.open(0);
+            this.capture.open("D:\\video\\16run\\16run.mp4");
 
             // is the video stream available?
             if (this.capture.isOpened()) {
@@ -166,8 +167,9 @@ public class FaceDetectionController {
 
         // each rectangle in faces is a face: draw them!
         Rect[] facesArray = faces.toArray();
-        for (int i = 0; i < facesArray.length; i++)
+        for (int i = 0; i < facesArray.length; i++) {
             Imgproc.rectangle(frame, facesArray[i].tl(), facesArray[i].br(), new Scalar(0, 255, 0), 3);
+        }
 
     }
 
@@ -182,7 +184,7 @@ public class FaceDetectionController {
             this.lbpClassifier.setSelected(false);
         }
 
-        this.checkboxSelection("resources/haarcascades/haarcascade_frontalface_alt.xml");
+        this.checkboxSelection("E:\\repo\\javafx-test\\src\\sample\\resources\\haarcascades\\haarcascade_frontalface_alt.xml");
     }
 
     /**
@@ -196,7 +198,7 @@ public class FaceDetectionController {
             this.haarClassifier.setSelected(false);
         }
 
-        this.checkboxSelection("resources/lbpcascades/lbpcascade_frontalface.xml");
+        this.checkboxSelection("E:\\repo\\javafx-test\\src\\sample\\resources\\lbpcascades\\lbpcascade_frontalface.xml");
     }
 
     /**

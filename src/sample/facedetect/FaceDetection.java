@@ -21,7 +21,7 @@ public class FaceDetection extends Application {
             root.setStyle("-fx-background-color: whitesmoke;");
             // create and style a scene
             Scene scene = new Scene(root, 800, 600);
-            scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+//            scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
             // create the stage with the given title and the previously created
             // scene
             primaryStage.setTitle("Face Detection and Tracking");
