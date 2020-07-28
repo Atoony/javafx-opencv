@@ -68,7 +68,7 @@ public class FaceDetectionController {
             this.lbpClassifier.setDisable(true);
 
             // start the video capture
-            this.capture.open(0);
+            this.capture.open("D:\\video\\16run\\16run.mp4");
 
             // is the video stream available?
             if (this.capture.isOpened()) {
@@ -184,7 +184,7 @@ public class FaceDetectionController {
             this.lbpClassifier.setSelected(false);
         }
 
-        this.checkboxSelection("/Users/qiumin/IdeaProjects/javafx-opencv/src/sample/resources/haarcascades/haarcascade_frontalface_alt.xml");
+        this.checkboxSelection("E:\\repo\\javafx-test\\src\\sample\\resources\\haarcascades\\haarcascade_frontalface_alt.xml");
     }
 
     /**
@@ -198,7 +198,7 @@ public class FaceDetectionController {
             this.haarClassifier.setSelected(false);
         }
 
-        this.checkboxSelection("/Users/qiumin/IdeaProjects/javafx-opencv/src/sample/resources/lbpcascades/lbpcascade_frontalface.xml");
+        this.checkboxSelection("E:\\repo\\javafx-test\\src\\sample\\resources\\lbpcascades\\lbpcascade_frontalface.xml");
     }
 
     /**
