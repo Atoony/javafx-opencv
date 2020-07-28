@@ -75,7 +75,7 @@ public class ImageSegController {
             this.dilateErode.setDisable(true);
 
             // start the video capture
-            this.capture.open("D:\\video\\16run\\16run.mp4");
+            this.capture.open(0);
 
             // is the video stream available?
             if (this.capture.isOpened()) {
