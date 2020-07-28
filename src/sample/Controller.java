@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class Controller {
 
     @FXML
-    private Button button;
+    private Button startBtn;
     @FXML
     private ImageView currentFrame;
 
@@ -68,7 +68,7 @@ public class Controller {
                 this.timer.scheduleAtFixedRate(frameGrabber, 0, 33, TimeUnit.MILLISECONDS);
 
                 // update the button content
-                this.button.setText("Stop Camera");
+                this.startBtn.setText("Stop Camera");
             }
             else
             {
@@ -81,7 +81,7 @@ public class Controller {
             // the camera is not active at this point
             this.cameraActive = false;
             // update again the button content
-            this.button.setText("Start Camera");
+            this.startBtn.setText("Start Camera");
 
             // stop the timer
             this.stopAcquisition();
