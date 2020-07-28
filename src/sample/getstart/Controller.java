@@ -44,7 +44,7 @@ public class Controller {
         if (!this.cameraActive)
         {
             // start the video capture
-            this.capture.open(videoPath);
+            this.capture.open(cameraId);
 
             // is the video stream available?
             if (this.capture.isOpened())
