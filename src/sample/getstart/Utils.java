@@ -1,4 +1,4 @@
-package sample;
+package sample.getstart;
 
 import javafx.application.Platform;
 import javafx.beans.property.ObjectProperty;
