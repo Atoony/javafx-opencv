@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.multitrack.MultiTrackController">
+    <center>
+        <ImageView fx:id="originalFrame" fitHeight="245.0" fitWidth="422.0" pickOnBounds="true" preserveRatio="true"
+                   BorderPane.alignment="TOP_CENTER">
+            <BorderPane.margin>
+                <Insets top="20.0"/>
+            </BorderPane.margin>
+        </ImageView>
+    </center>
+    <bottom>
+        <VBox alignment="TOP_CENTER" prefHeight="85.0" prefWidth="600.0">
+            <children>
+                <Button fx:id="startBtn" mnemonicParsing="false" onAction="#start" text="开始运行"
+                        BorderPane.alignment="CENTER">
+                    <BorderPane.margin>
+                        <Insets bottom="25.0"/>
+                    </BorderPane.margin>
+                </Button>
+                <Separator/>
+                <Label fx:id="fps"/>
+            </children>
+        </VBox>
+    </bottom>
+    <top>
+        <HBox prefHeight="53.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="跟踪算法：">
+                    <HBox.margin>
+                        <Insets left="40.0" top="23.0"/>
+                    </HBox.margin>
+                </Label>
+                <ChoiceBox fx:id="trackerTypeBox" onAction="#typeSelect" prefWidth="150.0">
+                    <HBox.margin>
+                        <Insets left="10.0" top="20.0"/>
+                    </HBox.margin>
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="BOOSTING"/>
+                            <String fx:value="MIL"/>
+                            <String fx:value="KCF"/>
+                            <String fx:value="TLD"/>
+                            <String fx:value="MEDIANFLOW"/>
+                            <String fx:value="MOSSE"/>
+                            <String fx:value="CSRT"/>
+                        </FXCollections>
+                    </items>
+                </ChoiceBox>
+                <Label text="目标数量：">
+                    <HBox.margin>
+                        <Insets left="40.0" top="23.0"/>
+                    </HBox.margin>
+                </Label>
+                <ChoiceBox fx:id="targetNumberBox" onAction="#numberSelect" prefWidth="150.0">
+                    <HBox.margin>
+                        <Insets left="10.0" top="20.0"/>
+                    </HBox.margin>
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="1"/>
+                            <String fx:value="2"/>
+                            <String fx:value="3"/>
+                            <String fx:value="4"/>
+                            <String fx:value="5"/>
+                            <String fx:value="6"/>
+                        </FXCollections>
+                    </items>
+                </ChoiceBox>
+            </children>
+        </HBox>
+    </top>
+</BorderPane>
